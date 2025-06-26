@@ -30,9 +30,10 @@ const Budget = () => {
 
   return (
     <DashboardLayout activeMenu="Budget Manager">
-      <div className="my-8 mx-8">
+      <div className="my-8 mx-8 ">
         
-        <h2 className="text-2xl font-bold mb-6 text-center">Category-wise Budget Manager</h2>
+        <h2 className="text-2xl font-bold mb-2.5 text-center text-gray-200">Category-wise Budget Manager</h2>
+        <p className="text-md  mb-6 text-center text-gray-400">Categorize your budget efficiently</p>
         
         <div className="flex justify-end mb-6">
           <button
@@ -46,7 +47,7 @@ const Budget = () => {
         <div></div>
 
         {showForm && (
-          <form onSubmit={handleAddCategory} className="bg-white shadow-md rounded-lg p-5 mb-6">
+          <form onSubmit={handleAddCategory} className=" shadow-md rounded-lg p-5 mb-6 bg-gray-900 border border-gray-100 rounded-5xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <input
                 type="text"
@@ -54,7 +55,7 @@ const Budget = () => {
                 value={formData.category}
                 onChange={e => setFormData({ ...formData, category: e.target.value })}
                 required
-                className="text-sm border-2 border-gray-400 p-2 px-3 rounded-xl"
+                className="text-sm placeholder-gray-600 border-2 bg-gray-300 text-black  font-medium border-gray-400 p-2 px-3 rounded-xl"
               />
               <input
                 type="number"
@@ -62,7 +63,7 @@ const Budget = () => {
                 value={formData.budget}
                 onChange={e => setFormData({ ...formData, budget: e.target.value })}
                 required
-                className="text-sm border-2 border-gray-400 p-2 px-3 rounded-xl"
+                className="text-sm border-2 placeholder-gray-600 bg-gray-300 text-black font-medium border-gray-400 p-2 px-3 rounded-xl"
               />
               
              </div>
@@ -83,7 +84,7 @@ const Budget = () => {
             {budgets.map((item) => {
               const percent = Math.min(100, Math.round((item.expense / item.budget) * 100))
               return (
-                <div key={item.category} className="bg-white rounded-xl shadow-lg shadow-gray-500 p-4 flex flex-col items-center relative">
+                <div key={item.category} className="bg-gray-900 rounded-xl p-4 flex flex-col items-center relative">
                   <button
                     onClick={() => deleteBudget(item.category)}
                     className="absolute top-3 right-3 text-red-600 hover:text-red-800"
@@ -92,15 +93,15 @@ const Budget = () => {
                     <LuTrash2 className='text-2xl cursor-pointer' />
                   </button>
                   
-                  <h3 className="text-lg font-semibold mb-2">{item.category}</h3>
+                  <h3 className="text-lg font-semibold mb-2 text-gray-200">{item.category}</h3>
                   <div className="w-full mb-2">
                     
-                    <div className='text-sm mb-1 text-gray-500 font-medium'>Budget : <span className='text-gray-600 ml-0.5'>₹{item.budget}</span> </div>
-                    <div className='text-sm mb-4 text-gray-500 font-medium'>Spent : <span className='text-gray-600 ml-0.5'>₹{item.expense}</span></div>
+                    <div className='text-sm mb-1 text-gray-400 font-medium'>Budget : <span className='text-gray-300 ml-0.5'>₹{item.budget}</span> </div>
+                    <div className='text-sm mb-4 text-gray-400 font-medium'>Spent : <span className='text-gray-300 ml-0.5'>₹{item.expense}</span></div>
                     
                     <div className="w-full bg-gray-200 rounded-full h-3 mt-2">
                       <div
-                        className={`h-3 rounded-full ${percent < 80 ? 'bg-green-400' : percent < 100 ? 'bg-yellow-400' : 'bg-red-500'}`}
+                        className={`h-3 rounded-full ${percent < 80 ? 'bg-green-600' : percent < 100 ? 'bg-yellow-400' : 'bg-red-500'}`}
                         style={{ width: `${percent}%` }}
                       ></div>
                     </div>

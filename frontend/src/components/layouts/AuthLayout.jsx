@@ -4,19 +4,18 @@ import Logo from '../../assets/images/FinMateLogo.png'
 
 const AuthLayout = ({children}) => {
   return (
-    <div className='flex'>
+    <div className='flex bg-gray-900'>
 
        {/* Left Part*/}
-        <div className='w-screen h-screen md:w-[60vw] px-12 pt-7 pb-15'>
+        <div className='w-screen h-screen bg-gray-900 md:w-[60vw] px-12 pt-7 pb-15'>
             <img src={Logo} alt='Logo' className='w-48 h-14 -ml-5' />
             {/* <h2 className='text-lg font-medium text-black'>Finance Manage</h2> */}
-             {children}
-             
+             {children} 
         </div>
 
        
        {/* Right Part*/}
-        <div className='hidden md:block w-[40vw] h-screen bg-violet-50 bg-auth-bg-img bg-cover bg-no-repeat bg-center overflow-hidden p-8 relative'>
+        <div className='hidden md:block w-[40vw] h-screen rounded-l-[350px] bg-violet-200 bg-auth-bg-img bg-cover bg-no-repeat bg-center overflow-hidden p-8 relative'>
             <div className='w-48 h-48 rounded-[40px] bg-purple-600 absolute -top-7 -left-5 '></div>
             {/* <div className='w-48 h-56 rounded-[40pxs] border-[20px] border-fuchsia-600 absolute -top-[30%] -right-10 '></div> */}
             <div className='w-48 h-48 rounded-[40px] bg-violet-500 absolute -bottom-7 -left-5 '></div>

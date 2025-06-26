@@ -16,7 +16,7 @@ const ExpenseList = ({transactions, onDelete, onDownload}) => {
       </div>
 
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-14'>
+      <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
         {transactions?.map((expense) => (
           <TransactionInfoCard
             key={expense._id}

@@ -75,8 +75,8 @@ const Login = () => {
   return (
     <AuthLayout>
        <div className='lg:w-[65%] h-3/4 md:h-full flex flex-col justify-center lg:-mt-6'>
-        <h3 className='text-xl font-semibold text-black'> Welcome Back </h3>
-        <p className='text-xs text-slate-700 mt-[5px] mb-6'> Please enter your details to Login </p>
+        <h3 className='text-xl font-semibold text-gray-300'> Welcome Back </h3>
+        <p className='text-xs text-slate-400 mt-[5px] mb-6'> Please enter your details to Login </p>
        
        
        <form onSubmit={handleLogin}>
@@ -87,7 +87,7 @@ const Login = () => {
 
         <button type='submit' className='w-full bg-primary text-white px-4 py-3 rounded-md mt-4 cursor-pointer hover:bg-purple-600 hover:shadow-lg  transition-all ease-in-out duration-200'> Login </button>
 
-        <p className='text-sm text-slate-800 mt-4'> Don't have an account? {" "}
+        <p className='text-sm text-slate-300 mt-4'> Don't have an account? {" "}
           <Link to='/signup' className="text-primary font-medium underline" > Signup </Link>
         </p>
 

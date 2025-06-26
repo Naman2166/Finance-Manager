@@ -8,7 +8,7 @@ const RecentTransactions = ({transactions, onSeeMore}) => {
   return (
     <div className='card'>
         <div className='flex justify-between items-center '>
-            <h5 className='text-lg'>Recent Transactions</h5>
+            <h5 className='text-lg text-gray-100 font-medium'>Recent Transactions</h5>
             <button onClick={onSeeMore} className='card-btn'>
                 See All <LuArrowRight className='text-base' />
             </button>

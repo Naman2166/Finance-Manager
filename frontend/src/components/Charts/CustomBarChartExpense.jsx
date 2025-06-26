@@ -27,15 +27,15 @@ const CustomBarChartExpense = ({data}) => {
 
 
   return (
-    <div className='bg-white mt-6'>
+    <div className='bg-gray-900 mt-6 text-white'>
         <ResponsiveContainer width="100%" height={300}>
             <BarChart data={data}>                         {/* BarChart is the main component that displays the bar chart */}
                 <CartesianGrid stroke="none" />
-                <XAxis dataKey="month" tick={{fontSize: 12, fill: "#555"}} stroke="none" />
-                <YAxis tick={{fontSize: 12, fill: "#555"}} stroke="none" />
+                <XAxis dataKey="month" tick={{fontSize: 12, fill: "#D1D5DB"}} stroke="none" />
+                <YAxis tick={{fontSize: 12, fill: "#D1D5DB"}} stroke="none" />
                 <Tooltip content={CustomTooltip} />         {/* tooltip is the small box that appears when you hover over a bar in the bar chart */}
                 <Legend />                                  {/*legend is the small squares in the bar chart that show the percentage of each category */}
-                <Bar dataKey="amount" fill="#FF8042" radius={[10, 10, 0, 0]} activeDot={{r: 8, fill: "yellow"}} activeStyle={{fill: "green"}}>     
+                <Bar dataKey="amount" fill="#D1D5DB" radius={[10, 10, 0, 0]} activeDot={{r: 8, fill: "yellow"}} activeStyle={{fill: "green"}}>     
                     {data.map((entry, index) => (
                         <Cell key={index} fill="#ff4d4d" />        //cell is the small rectangle that appears in the bar chart
                     ))}

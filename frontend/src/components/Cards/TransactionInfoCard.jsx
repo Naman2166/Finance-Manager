@@ -6,14 +6,14 @@ const TransactionInfoCard = ({title, icon, amount, type, date, hideDeleteBtn, on
 
   const getAmountStyle = () => {
     if(type === "income") {
-        return "bg-green-50 text-green-500"
+        return "bg-green-200 text-green-800"
     }
-    return "bg-red-50 text-red-500"
+    return "bg-red-200 text-red-700"
   }
 
 
   return (
-    <div className='group relative flex items-center gap-4 mt-2 p-3 rounded-lg'>
+    <div className='group relative flex items-center justify-between gap-4 mt-2 p-3 pr-8 rounded-lg'>
        
         <div className='w-12 h-12 flex items-center justify-center text-xl text-gray-800 bg-gray-100 rounded-full'>
             {icon ? 
@@ -28,7 +28,7 @@ const TransactionInfoCard = ({title, icon, amount, type, date, hideDeleteBtn, on
         <div className='flex-1 flex items-center justify-between'>
            
            <div>
-            <p className='text-sm text-gray-700 font-medium'>{title}</p>
+            <p className='text-sm text-gray-200 font-medium'>{title}</p>
             <p className='text-xs text-gray-400 mt-1'>{date}</p>
            </div>
 

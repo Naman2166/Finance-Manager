@@ -21,7 +21,7 @@ const DashboardLayout = ({ activeMenu, children }) => {
 
       {user ? 
       (
-        <div className="flex flex-col md:flex-row bg-gray-100">
+        <div className="flex flex-col md:flex-row text-gray-100 bg-gray-950">
           <div className="max-[1080px]:hidden">
             <SideMenu activeMenu={activeMenu} />
           </div>

@@ -7,7 +7,7 @@ import CustomLegend from './CustomLegend'
 const CustomPieChart = ({data, label, totalAmount, colors, showTextAnchor}) => {
 
   return (
-    <ResponsiveContainer width="100%" height={380}>
+    <ResponsiveContainer width="100%" height={380} >
         <PieChart>
 
             <Pie
@@ -35,7 +35,7 @@ const CustomPieChart = ({data, label, totalAmount, colors, showTextAnchor}) => {
                    y="50%"
                    dy={-25}
                    textAnchor="middle"
-                   fill="#666"
+                   fill="#ccc4c2"
                    fontSize="14px"
                  >
                     {/* label is the text that appears in the center of the pie chart */}
@@ -46,7 +46,7 @@ const CustomPieChart = ({data, label, totalAmount, colors, showTextAnchor}) => {
                    y="50%"
                    dy={8}
                    textAnchor="middle"
-                   fill="#333"
+                   fill="#fff"
                    fontSize="24px"
                    fontWeight="semibold"
                  >

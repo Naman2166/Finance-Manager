@@ -18,7 +18,7 @@ const Last60DaysIncome = ({data}) => {
   return (
     <div className='card col-span-1'>
         <div className='flex items-center justify-between'>
-            <h5 className='text-lg'>Last 30 Days Income</h5>
+            <h5 className='text-lg font-medium text-gray-100'>Last 30 Days Income</h5>
         </div>
 
         <CustomBarChartIncome data={chartData} />

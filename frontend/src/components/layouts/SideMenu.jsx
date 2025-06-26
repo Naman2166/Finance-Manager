@@ -30,7 +30,7 @@ const SideMenu = ({activeMenu}) => {
 
 
   return (
-    <div className='relative w-64 h-[calc(100vh-61px)] bg-white border-r border-gray-200/50 p-5 sticky top-[61px] z-20'>
+    <div className='relative w-64 h-[calc(100vh-61px)] text-gray-200 bg-gray-900 p-5 sticky top-[61px] z-20'>
 
         <div className='flex flex-col items-center justify-center gap-3 mt-3 mb-7'>
           {/* {console.log(user)} */}
@@ -38,23 +38,24 @@ const SideMenu = ({activeMenu}) => {
           <img src={user?.profileImageUrl || ''}  alt="profile Image" className='w-20 h-20 bg-slate-400 rounded-full' />
           :
           <>
-          <FaUserCircle color="#000000" className='w-10 h-10 bg-slate-100 rounded-full' />            {/* color:#dddddd for lighter gray  */}
+          <FaUserCircle color="#000000" className='w-10 h-10 bg-slate-100  rounded-full' />            {/* color:#dddddd for lighter gray  */}
           </>
           }
 
-          <h5 className='text-gray-950 font-medium leading-6'> {user?.fullName || ''} </h5>
+          <h5 className='text-gray-100 font-medium leading-6'> {user?.fullName || ''} </h5>
+          <hr className='text-gray-400 w-full my-0.5'/>
         </div>
 
         
         {SIDE_MENU_DATA.map((item, index) => (
-            <button key={`menu_${index}`} onClick={() => handleClick(item.path)} className={`w-full flex items-center gap-4 text-[15px] px-6 py-3 rounded-lg mb-3 cursor-pointer ${activeMenu == item.label ? 'bg-primary text-white' : ''}`}>
+            <button key={`menu_${index}`} onClick={() => handleClick(item.path)} className={`w-full flex items-center gap-4 text-[15px] px-6 py-3 rounded-lg mb-3 cursor-pointer ${activeMenu == item.label ? 'bg-primary text-black font-semibold' : ''}`}>
               <item.icon className='text-xl' />
               {item.label}
             </button>
         ))}
 
         {/* Log Out button */}
-        <div onClick={()=>handleLogout()} className='absolute bottom-10 w-2/3 flex justify-center items-center mx-5 py-1 rounded-lg cursor-pointer text-white font-medium bg-gray-600 hover:bg-gray-800'>
+        <div onClick={()=>handleLogout()} className='absolute bottom-10 w-2/3 flex justify-center items-center mx-5 py-1 rounded-lg cursor-pointer text-black font-medium bg-gray-400 hover:bg-gray-300  hover:font-semisbold'>
           Log Out
         </div>
          

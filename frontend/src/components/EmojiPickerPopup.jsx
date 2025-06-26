@@ -19,7 +19,7 @@ const EmojiPickerPopup = ({icon, onSelect}) => {             //used in /componen
                 (<LuImage className='' />)}
             </div>
 
-            <p>{icon ? "Change Icon" : "Select Icon"}</p>
+            <p className='text-gray-800'>{icon ? "Change Icon" : "Select Icon"}</p>
         </div>
 
         {isOpen && (

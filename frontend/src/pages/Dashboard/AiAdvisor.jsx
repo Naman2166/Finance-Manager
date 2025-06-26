@@ -30,7 +30,7 @@ const AiAdvisor = () => {
         },
         body: JSON.stringify({
           model: 'command-r-plus',     // or 'command' / 'command-light'
-          prompt: input,
+          prompt: `${input}\n\nAnswer in 3-5 short bullet points. Start each point on a new line.`,
           max_tokens: 300,
           temperature: 0.6,
           k: 0,
@@ -59,10 +59,10 @@ const AiAdvisor = () => {
   return (
     <DashboardLayout activeMenu="AI Advisor">
       <div className='flex justify-center items-center py-6'>
-        <div className="max-w-4xl lg:min-w-full lg:min-h-[630px] bg-gray-800 rounded-2xl shadow-lg p-6 flex flex-col">
+        <div className="max-w-4xl lg:min-w-full lg:min-h-[630px] bg-gray-900 rounded-2xl shadow-lg p-6 flex flex-col">
           <h2 className="text-2xl text-white font-semibold text-center mb-4">AI Advisor</h2>
           
-          <div className="flex-1 overflow-y-auto mb-4 p-3 bg-gray-300 rounded-xl min-h-[200px] max-h-[490px] overflow-y-auto hide-scrollbar" style={{
+          <div className="flex-1 overflow-y-auto mb-4 p-3 bg-gray-600 rounded-xl min-h-[200px] max-h-[490px] overflow-y-auto hide-scrollbar" style={{
     scrollbarWidth: 'none',
     msOverflowStyle: 'none'
   }}>
@@ -96,12 +96,12 @@ const AiAdvisor = () => {
               onChange={e => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
               placeholder="Ask your AI Advisor..."
-              className="flex-1 p-2 rounded-lg border border-gray-400 bg-gray-600 text-base text-white placeholder-gray-300"
+              className="flex-1 p-2 pl-3 rounded-lg bg-gray-400 text-base text-black placeholder-gray-800"
             />
             <button
               onClick={handleSend}
               disabled={loading}
-              className="px-7 py-2 rounded-lg bg-gray-100 font-semibold text-base hover:bg-gray-300 transition-colors disabled:opacity-60"
+              className="px-7 py-2 rounded-lg text-black bg-gray-400 font-semibold text-base hover:bg-gray-300 transition-colors disabled:opacity-60"
             >
               Send
             </button>
