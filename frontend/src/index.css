@@ -60,3 +60,40 @@
     display: none;
   }
     
+
+/* calendar icon positon and size (larger screen)  */
+  input.date-input::-webkit-calendar-picker-indicator {
+    transform: scale(1.6); /* Increase the icon size */
+    cursor: pointer;
+    margin-right: 380px;
+  }
+  
+/* Media Query: medium screens (<=768px) */
+@media (max-width: 768px) {
+    input.date-input::-webkit-calendar-picker-indicator {
+      margin-right: 380px;  /* adjust as needed */
+    }
+  }
+
+/* Media Query: Smaller screens (<=768px) */
+@media (max-width: 650px) {
+    input.date-input::-webkit-calendar-picker-indicator {
+      margin-right: 290px;  /* adjust as needed */
+    }
+  }
+
+/* Media Query: less than Smaller screens (<=768px) */
+@media (max-width: 550px) {
+    input.date-input::-webkit-calendar-picker-indicator {
+      margin-right: 0px;  /* adjust as needed */
+    }
+  }
+
+
+  /* Optional spacing tweak */
+  input.date-input {
+    padding-right: 2.5rem; /* Extra space for the bigger icon */
+  }
+
+
+  

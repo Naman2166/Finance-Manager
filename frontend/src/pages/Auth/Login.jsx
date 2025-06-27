@@ -41,20 +41,19 @@ const Login = () => {
       setError('Please enter your password');
       return;
     }
-
-    setError("");
     
 
 
     //Login API Call
     try {
       const response = await axiosInstance.post(API_PATH.AUTH.LOGIN, { email, password });              //defined in apiPath.js & axiosInstance.js
+      // console.log(response)
       const {token, user} = response.data;
 
       if(token) {
       localStorage.setItem('token', token);
       updateUser(user);                       //defined in UserContext.jsx      //this is used to update the user data in the context
-      await fetchBudgets();                   
+      await fetchBudgets();                  // for re-rendering the budget component after login (defined in budget.jsx)      
       navigate('/dashboard');
       }
 

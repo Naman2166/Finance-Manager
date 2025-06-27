@@ -6,6 +6,7 @@ export const API_PATH = {
         LOGIN: "/api/auth/login",
         REGISTER: "/api/auth/register",
         GET_USER_INFO: "/api/auth/getUser",
+        UPDATE_PROFILE: "/api/auth/update-user",
     },
 
     //Dashboard API Path
@@ -39,6 +40,7 @@ export const API_PATH = {
 
     //Image API Path
     IMAGE: {
-        UPLOAD_IMAGE: "/api/image/upload-image",         //defined in authRoutes.js
+        UPLOAD_IMAGE: "/api/auth/upload-image",         //defined in authRoutes.js
+        DELETE_IMAGE: "/api/auth/delete-image",
     },
 }

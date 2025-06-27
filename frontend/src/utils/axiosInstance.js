@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { BASE_URL } from './apiPath';
+import { API_PATH } from './apiPath';
+
+
 
 
 // Create axios instance
@@ -42,7 +45,7 @@ axiosInstance.interceptors.response.use(
         if (error.response) {
             const status = error.response.status;
 
-            if (status === 401) {                                            //401 => unauthorized
+            if (status === 401 && error.config.url !== API_PATH.AUTH.LOGIN) {                                            //401 => unauthorized
                 logout();                                                    //defined above
             } else if (status === 500) {                                     //500 => server error
                 console.error('Server error. Please try again later.');

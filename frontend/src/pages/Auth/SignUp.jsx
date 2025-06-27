@@ -51,15 +51,17 @@ const SignUp = () => {
 
     //Sign Up API Call
     try {
-
+      
+      let profileImageUrl = "";
       //upload profile picture if present
       if(profilePic){
         const imgUploadResponse = await uploadImage(profilePic);           //defined in uploadImage.js
-        profileImageUrl = imgUploadResponse.imageUrl || "";
+        profileImageUrl = encodeURI(imgUploadResponse.imageUrl || "");
       }
 
       //Send the data to the backend
       const response = await axiosInstance.post(API_PATH.AUTH.REGISTER, { fullName, email, password, profileImageUrl });           //defined in apiPath.js & axiosInstance.js
+      {console.log(response)};
 
       const { token, user } = response.data;
 

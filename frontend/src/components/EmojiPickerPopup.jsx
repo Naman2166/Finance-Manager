@@ -24,8 +24,8 @@ const EmojiPickerPopup = ({icon, onSelect}) => {             //used in /componen
 
         {isOpen && (
             <div className='relative'>
-                <button type='button' onClick={() => setIsOpen(false)} className='w-7 h-7 flex items-center justify-center bg-white border border-gray-200 rounded-full absolute -top-2 -right-2 z-10 cursor-pointer'>
-                    <LuX className='w-6 h-6' />
+                <button type='button' onClick={() => setIsOpen(false)} className='w-7 h-7 flex items-center justify-center bg-white border border-gray-400 rounded-full absolute -top-2 -right-2 z-10 cursor-pointer'>
+                    <LuX className='w-6 h-6 text-black' />
                 </button>
 
                 <EmojiPicker           //imported from emoji-picker-react

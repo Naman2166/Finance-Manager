@@ -20,7 +20,7 @@ const Input = ({type, placeholder, value, onChange, label}) => {
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className='w-full bg-transparent outline-none'
+        className={`w-full bg-transparent outline-none ${ type === 'date' ? 'date-input' : '' }` }
         />
 
         {type === "password" && (

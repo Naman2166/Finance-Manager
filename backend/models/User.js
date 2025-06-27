@@ -27,7 +27,8 @@ userSchema.pre('save', async function (next) {          // pre('save', ...) is a
 
 //Compare password with hashed password
 userSchema.methods.comparePassword = async function (userEnteredPassword) {          // userSchema.methods => lets you define custom functions on every user document ,  here we are adding a custom function called "comparePassword" to every user document. (ie now ,we can directly compare user entered password using "user.comparePassword('abcdef')" )
-    return await bcrypt.compare(userEnteredPassword, this.password);                  
+    return await bcrypt.compare(userEnteredPassword, this.password); 
+                 
 }
 
 
