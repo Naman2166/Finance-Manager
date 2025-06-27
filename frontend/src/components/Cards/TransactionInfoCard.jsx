@@ -6,7 +6,7 @@ const TransactionInfoCard = ({title, icon, amount, type, date, hideDeleteBtn, on
 
   const getAmountStyle = () => {
     if(type === "income") {
-        return "bg-green-200 text-green-800"
+        return "bg-green-200 text-green-950"
     }
     return "bg-red-200 text-red-700"
   }

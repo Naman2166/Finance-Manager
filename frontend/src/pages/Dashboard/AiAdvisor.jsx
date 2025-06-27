@@ -30,7 +30,7 @@ const AiAdvisor = () => {
         },
         body: JSON.stringify({
           model: 'command-r-plus',     // or 'command' / 'command-light'
-          prompt: `${input}\n\nAnswer in 3-5 short bullet points. Start each point on a new line.`,
+          prompt: `${input}\n\nAnswer in 3 short bullet points. Start each point on a new line.`,
           max_tokens: 300,
           temperature: 0.6,
           k: 0,
@@ -62,7 +62,7 @@ const AiAdvisor = () => {
         <div className="max-w-4xl lg:min-w-full lg:min-h-[630px] bg-gray-900 rounded-2xl shadow-lg p-6 flex flex-col">
           <h2 className="text-2xl text-white font-semibold text-center mb-4">AI Advisor</h2>
           
-          <div className="flex-1 overflow-y-auto mb-4 p-3 bg-gray-600 rounded-xl min-h-[200px] max-h-[490px] overflow-y-auto hide-scrollbar" style={{
+          <div className="flex-1 overflow-y-auto mb-4 p-3 bg-gray-800 rounded-xl min-h-[200px] max-h-[490px] overflow-y-auto hide-scrollbar" style={{
     scrollbarWidth: 'none',
     msOverflowStyle: 'none'
   }}>
@@ -84,7 +84,7 @@ const AiAdvisor = () => {
               </div>
             ))}
             {loading && (
-              <div className="text-sm italic text-gray-600">AI is typing...</div>
+              <div className="text-sm italic text-gray-500">AI is typing...</div>
             )}
             <div ref={messagesEndRef} />
           </div>
