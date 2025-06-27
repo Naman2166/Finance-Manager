@@ -27,7 +27,7 @@ const Expense = () => {
     data: null,
   })
   const [openAddExpenseModal, setOpenAddExpenseModal] = useState(false)
-  const { addExpenseToCategory } = useBudget();
+  const { addExpenseToCategory, removeExpenseFromCategory } = useBudget();
   
 
 
@@ -97,10 +97,11 @@ const Expense = () => {
 
 
   //Delete Expense
-  const deleteExpense = async (id) => {
+  const deleteExpense = async (expense) => {
     try{
-      await axiosInstance.delete(API_PATH.EXPENSE.DELETE_EXPENSE(id))
-
+      await axiosInstance.delete(API_PATH.EXPENSE.DELETE_EXPENSE(expense._id))
+      // Update budget
+      await removeExpenseFromCategory(expense.category, expense.amount);
       setOpenDeleteAlert({show:false, data:null})
       toast.success("Expense details deleted succesfully")
       fetchExpenseDetails();
@@ -156,7 +157,7 @@ const Expense = () => {
 
             <ExpenseList
               transactions={expenseData}
-              onDelete={(id) => setOpenDeleteAlert({show: true, data: id})}
+              onDelete={(expense) => setOpenDeleteAlert({show: true, data: expense})}
               onDownload={handleDownloadExpenseDetails}
             />
         </div>

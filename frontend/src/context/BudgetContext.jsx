@@ -91,6 +91,16 @@ export const BudgetProvider = ({ children }) => {
     await updateBudget(category, { budget: found.budget, expense: newExpense });
   };
 
+  // Remove expense from a category (only if it exists)
+  const removeExpenseFromCategory = async (category, amount) => {
+    const found = budgets.find(
+      (b) => b.category.toLowerCase() === category.toLowerCase()
+    );
+    if (!found) return;
+    const newExpense = Number(found.expense) - Number(amount);
+    await updateBudget(category, { budget: found.budget, expense: newExpense });
+  };
+
  
   return (
     <BudgetContext.Provider
@@ -100,6 +110,7 @@ export const BudgetProvider = ({ children }) => {
         addBudget,
         deleteBudget,
         addExpenseToCategory,
+        removeExpenseFromCategory,
         fetchBudgets,
       }}
     >

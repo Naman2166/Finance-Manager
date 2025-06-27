@@ -25,7 +25,7 @@ const ExpenseList = ({transactions, onDelete, onDownload}) => {
             date={moment(expense.date).format('DD MMM YYYY')}
             amount={expense.amount}
             type='expense'
-            onDelete={() => onDelete(expense._id)}
+            onDelete={() => onDelete(expense)}
           />
         ))}
       </div>
